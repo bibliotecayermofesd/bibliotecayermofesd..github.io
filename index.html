@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Biblioteca | Colegio Santa María de Yermo - FESD</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="shortcut icon" href="/assets/img/logo/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -17,9 +18,16 @@
                     height="100"></a>
         </div>
         <!-- Menu -->
-        <nav class="nav-heaer">
+        <nav class="nav-header">
             <ul>
                 <li><a href="/index.html">INICIO</a></li>
+                <li><a onclick="submenu()">BIBLIOTECAS</a>
+                    <ul class="subnav-header">
+                        <li><a href="/biblioteca/aulas.html">AULAS</a></li>
+                        <li><a href="/biblioteca/eso-bachillerato.html">E.S.O. y BACHILLERATO</a></li>
+                        <li><a href="/biblioteca/infantil-primaria.html">INFANTIL Y PRIMARIA</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -27,9 +35,9 @@
     <!-- START MAIN -->
     <main>
         <!-- START HEAD -->
-        <section>
+        <section id="cabecera">
             <div class="title">
-                <h1>Lorem Ipsum</h1>
+                <h1>Biblioteca | Colegio Santa María de Yermo - FESD</h1>
             </div>
         </section>
         <!-- END HEAD -->
@@ -70,8 +78,8 @@
         <p class="copy"></p>
     </footer>
     <!-- END FOOTER -->
-    <script src="./assets/js/footer.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 
 </html>
