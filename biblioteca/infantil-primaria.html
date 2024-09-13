@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca | Colegio Santa María de Yermo - FESD</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Biblioteca de Infantil y Primaria | Colegio Santa María de Yermo - FESD</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="shortcut icon" href="/assets/img/logo/favicon.png" type="image/x-icon">
 </head>
 
@@ -14,8 +14,7 @@
     <header>
         <!-- Logo -->
         <div class="logo">
-            <a href="/index.html"><img src="./assets/img/logo/logo-fesd-blanco.png" alt="Logo FESD" width="200"
-                    height="100"></a>
+            <img src="../assets/img/logo/logo-fesd-blanco.png" alt="Logo FESD" width="200" height="100">
         </div>
         <!-- Menu -->
         <nav class="nav-header">
@@ -37,37 +36,32 @@
         <!-- START HEAD -->
         <section id="cabecera">
             <div class="title">
-                <h1>Biblioteca | Colegio Santa María de Yermo - FESD</h1>
+                <h1>Biblioteca de Infantil y Primaria</h1>
             </div>
         </section>
         <!-- END HEAD -->
         <!-- START DESCRIPTION -->
         <section id="description">
             <div>
-                <h2>Description</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate consectetur repellendus numquam
-                    est, laboriosam aspernatur itaque impedit sint? Dolores illum atque impedit quas reprehenderit
-                    harum. Veniam nihil et recusandae quis?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate consectetur repellendus numquam
-                    est, laboriosam aspernatur itaque impedit sint? Dolores illum atque impedit quas reprehenderit
-                    harum. Veniam nihil et recusandae quis?</p>
+                <h2>Sobre la Biblioteca</h2>
+                <p>La biblioteca del Colegio Santa María de Yermo ofrece un servicio de prestamo de libros para todos
+                    los alumnos del centro de la etapas de Secundaria y Bachillerato.</p>
+                <p>Será necesario para hacer uso del servicio de préstamo de libros que los alumanos posean el carnét de
+                    lector de la biblioteca.</p>
             </div>
         </section>
         <!-- END DESCRIPTION -->
         <!-- START CATALOGO -->
         <section id="catalogo">
-            <div>
-                <h2>Catalogo de Libros</h2>
-                <h3>Biblioteca de Infantil y Primaria</h3>
-                <section class="books books-infantil-primaria">
-                </section>
-                <h3>Biblioteca de Secundaria y Bachillerato</h3>
-                <section class="books books-secundaria-bachillerato">
-                </section>
-                <h3>Biblioteca de las Aulas</h3>
-                <section class="books books-aulas">
-                </section>
+            <h2>Catalogo de Libros</h2>
+            <!-- Buscador -->
+            <div id="navigator">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Buscar libro...">
+                </form>
             </div>
+            <!-- Libros -->
+            <section class="books books-infantil-primaria"></section>
         </section>
         <!-- END CATALOGO -->
 
