@@ -5,7 +5,7 @@
 
 
 
-fetch('./assets/db/biblioteca.json')
+fetch('./assets/db/secundaria-bachillerato.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Error al cargar el archivo JSON');

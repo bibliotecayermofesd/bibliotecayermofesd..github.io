@@ -24,9 +24,5 @@
 - Historia (Biograficos)
 - Diccionarios
 
-82 literatura
-1/2/3 genero
-Tres primeras letras del autor
-
 Registro de Usuarios + Formulario: ID Nombre Apellidos Año-Academico
 Servicio de prestamo + Formulario: Fecha Fecha Dev (1 semana) (IDAlumno) Alumno Curso DataLibro (Titulo Autor)

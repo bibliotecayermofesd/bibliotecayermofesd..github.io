@@ -59,9 +59,9 @@ body {
 header {
     padding: 1% 5%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     background-color: var(--primary);
+    position: sticky;
 }
 
 header nav {
