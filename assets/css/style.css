@@ -68,7 +68,7 @@ body {
 /*** START HEADER STYLES ***/
 
 header {
-    padding: 1% 5%;
+    padding: 2% 5%;
     display: flex;
     justify-content: space-between;
     background-color: var(--primary);
@@ -110,14 +110,12 @@ ul.subnav-header {
     align-items: end;
     color: var(--light);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(2, 84, 29, 0.7) 80%),
-                url('/assets/img/img/libreria.jpeg');
-    
+        url('/assets/img/img/libreria.jpeg');
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
-
 
 section {
     margin: 2%;
@@ -130,13 +128,8 @@ section h2 {
 
 /** START DESCRIPTION STYLES **/
 
-
 #description {
     text-align: center;
-}
-
-#description div p {
-    padding: 0 8rem;
 }
 
 /** END DESCRIPTION STYLES **/
@@ -167,16 +160,16 @@ section h2 {
 }
 
 .book {
-    width: 45%;
+    width: 100%;
     border: 2px solid var(--primary);
     border-radius: 8px;
     padding: 25px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .book-image {
-    width: 45%;
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -186,7 +179,7 @@ section h2 {
 }
 
 .book-text {
-    width: 45%;
+    width: 100%;
 }
 
 /* END CATALOGO BOOKS STYLES */
@@ -207,3 +200,74 @@ footer {
 /*** END MAIN STYLES ***/
 
 /**** END BODY STYLES ****/
+
+
+/* Móviles grandes o tablets pequeñas */
+@media (min-width: 576px) {}
+
+/* Tablets o pantallas medianas */
+@media (min-width: 768px) {}
+
+/* Escritorios medianos (laptops) */
+@media (min-width: 992px) {
+    /* START CATALOGO BOOKS STYLES */
+
+    .books {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .book {
+        width: 45%;
+        border: 2px solid var(--primary);
+        border-radius: 8px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .book-image {
+        display: flex;
+        align-items: center;
+    }
+
+    .book-image img {
+        width: 100%;
+    }
+
+    /* END CATALOGO BOOKS STYLES */
+}
+
+/* Escritorios grandes */
+@media (min-width: 1200px) {
+
+    /** START DESCRIPTION STYLES **/
+
+    #description div p {
+        padding: 0 8rem;
+    }
+
+    /** END DESCRIPTION STYLES **/
+
+    /* START CATALOGO BOOKS STYLES */
+
+    .books {
+        gap: 25px;
+    }
+
+    .book {
+        flex-direction: row;
+    }
+
+    .book-image {
+        width: 45%;
+    }
+
+    .book-text {
+        width: 45%;
+    }
+
+    /* END CATALOGO BOOKS STYLES */
+}
