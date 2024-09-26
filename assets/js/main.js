@@ -31,7 +31,7 @@ function allBooks(nombreBiblioteca) {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate consectetur repellendus
                             numquam est, laboriosam aspernatur itaque impedit sint? Dolores illum atque impedit quas
                             reprehenderit harum. Veniam nihil et recusandae quis?</p>
-                        <a href='./libro.html?utm_cod=${item.cod}'>Ver más</a>
+                        <a href='./libro.html?utm_cod=${item.id}'class="btn btn-secondary">Ver más</a>
                     </div>
                 </div>`;
                 });

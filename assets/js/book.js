@@ -17,7 +17,7 @@ fetch('./assets/db/secundaria-bachillerato.json')
         let booksHTML = ''; // Acumulador de HTML
 
         data.forEach(item => {
-            if(document.location.href.includes(item.cod)){
+            if(document.location.href.includes(item.id)){
                 booksHTML = `<div class="book">
                 <div class="book-image"><img src="./assets/img/logo/logo-locus-cognitionis.svg" alt=""></div>
                 <div class="book-text">
