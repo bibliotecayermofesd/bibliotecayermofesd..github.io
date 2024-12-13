@@ -1,0 +1,136 @@
+/* General Styles */
+:root {
+    --primary: #02541d;
+    --secondary: #8AB096;
+    --accent: #353535;
+    --text-dark: #000000;
+    --text-light: #FFFFFF;
+    --hover: #8AB096;
+    --dark: #252525;
+    --light: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light);
+    color: var(--text-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    padding: 1rem;
+}
+
+.header__logo img {
+    width: 150px;
+    height: 75px;
+}
+
+.header__nav {
+    flex-grow: 1;
+    margin-left: 2rem;
+}
+
+.header__menu {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header__menu-item {
+    position: relative;
+}
+
+.header__menu-link {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.header__menu-link:hover {
+    background-color: var(--hover);
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+.header__submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+}
+
+.header__submenu-item {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}
+
+.header__submenu-link {
+    text-decoration: none;
+    color: var(--text-light);
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+.header__submenu-link:hover {
+    background-color: var(--hover);
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+.header__menu-item:hover .header__submenu {
+    display: block;
+}
+
+/* Main Styles */
+.main {
+    padding: 2rem;
+}
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.books__item {
+    flex: 1 1 calc(33.333% - 1.5rem);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: var(--light);
+    transition: transform 0.3s ease;
+}
+
+.books__item:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: var(--light);
+}
