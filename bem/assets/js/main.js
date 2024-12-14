@@ -19,9 +19,14 @@ function allBooks(nombreBiblioteca) {
             const booksContainer = document.querySelector(`.books--${nombreBiblioteca}`);
             const searchInput = document.getElementById('search-input');
 
+            const getRandomBooks = (books, count) => {
+                const shuffled = books.sort(() => 0.5 - Math.random());
+                return shuffled.slice(0, count);
+            };
+
             const displayBooks = (books) => {
                 let booksHTML = '';
-                books.forEach(item => {
+                books.forEach(item => { // Mostrar solo libros seleccionados aleatoriamente
                     booksHTML += `<div class="books__item">
                         <div class="books__item-image">
                             <img src="/assets/img/logo/logo-locus-cognitionis.svg" alt="Logo del libro">
@@ -31,15 +36,15 @@ function allBooks(nombreBiblioteca) {
                             <h5 class="books__item-subtitle">${item.subtitulo}</h5>
                             <p class="books__item-author">Autor: ${item.autor}</p>
                             <p class="books__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate consectetur repellendus numquam est, laboriosam aspernatur itaque impedit sint? Dolores illum atque impedit quas reprehenderit harum. Veniam nihil et recusandae quis?</p>
-                            <a href='./libro.html?utm_cod=${item.id}' class="button button--secondary">Ver más</a>
+                            <a href='./libro.html?utm_cod=${item.id}' class="button button--primary">Ver más</a>
                         </div>
                     </div>`;
                 });
                 booksContainer.innerHTML = booksHTML;
             };
 
-            // Mostrar todos los libros al cargar la página
-            displayBooks(data);
+            // Mostrar 4 libros aleatorios al cargar la página
+            displayBooks(getRandomBooks(data, 4));
 
             // Filtrar libros basados en la búsqueda
             if (searchInput) {
@@ -49,7 +54,7 @@ function allBooks(nombreBiblioteca) {
                         item.titulo.toLowerCase().includes(searchTerm) ||
                         (item.subtitulo && item.subtitulo.toLowerCase().includes(searchTerm))
                     );
-                    displayBooks(filteredBooks);
+                    displayBooks(getRandomBooks(filteredBooks, 4)); // Mostrar solo 4 resultados aleatorios
                 });
             }
         })
