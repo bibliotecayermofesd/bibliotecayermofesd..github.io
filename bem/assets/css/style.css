@@ -146,7 +146,7 @@ ul {
     background-repeat: no-repeat;
 }
 
-.catalog__section{
+.catalog__section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,7 +158,6 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: 2rem;
     padding: 2rem 0px;
 }
 
@@ -180,7 +179,8 @@ ul {
 }
 
 .books__item-image {
-    flex: 1; /* Ocupa el 40% del ancho de la tarjeta */
+    flex: 1;
+    /* Ocupa el 40% del ancho de la tarjeta */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -189,11 +189,13 @@ ul {
 .books__item-image img {
     width: 100%;
     height: auto;
-    max-width: 150px; /* Ajusta el tamaño máximo de la imagen si es necesario */
+    max-width: 150px;
+    /* Ajusta el tamaño máximo de la imagen si es necesario */
 }
 
 .books__item-text {
-    flex: 3; /* Ocupa el 60% del ancho de la tarjeta */
+    flex: 3;
+    /* Ocupa el 60% del ancho de la tarjeta */
     display: flex;
     flex-direction: column;
 }
@@ -210,7 +212,31 @@ ul {
     color: var(--text-dark);
 }
 
-.button{
+#pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination__button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.pagination__button:hover {
+    background-color: #ddd;
+}
+
+.pagination__button:focus {
+    background-color: #02541d;
+    color: white;
+}
+
+.button {
     max-width: 10rem;
     padding: 0.5rem 1rem;
     border-radius: 4px;
