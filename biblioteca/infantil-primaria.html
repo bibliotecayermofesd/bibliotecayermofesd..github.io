@@ -5,72 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca de Infantil y Primaria | Colegio Santa María de Yermo - FESD</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="shortcut icon" href="/assets/img/logo/favicon.png" type="image/x-icon">
 </head>
 
 <body>
     <!-- START HEADER -->
-    <header>
+    <header class="header">
         <!-- Logo -->
-        <div class="logo">
-            <a href="/index.html"><img src="./assets/img/logo/logo-fesd-blanco.png" alt="Logo FESD" width="150"
+        <div class="header__logo">
+            <a href="/index.html"><img src="/assets/img/logo/logo-fesd-blanco.png" alt="Logo FESD" width="150"
                     height="75"></a>
         </div>
         <!-- Menu -->
-        <nav class="nav-header">
-            <ul>
-                <li><a href="/index.html">INICIO</a></li>
-                <li><a onclick="submenu()">BIBLIOTECAS</a>
-                    <ul class="subnav-header">
-                        <li><a href="/biblioteca/aulas.html">AULAS</a></li>
-                        <li><a href="/biblioteca/eso-bachillerato.html">E.S.O. y BACHILLERATO</a></li>
-                        <li><a href="/biblioteca/infantil-primaria.html">INFANTIL Y PRIMARIA</a></li>
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li class="header__menu-item"><a href="/index.html" class="header__menu-link">INICIO</a></li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link">BIBLIOTECAS</a>
+                    <ul class="header__submenu">
+                        <li class="header__submenu-item"><a href="/biblioteca/aulas.html"
+                                class="header__submenu-link">AULAS</a></li>
+                        <li class="header__submenu-item"><a href="/biblioteca/eso-bachillerato.html"
+                                class="header__submenu-link">E.S.O. y BACHILLERATO</a></li>
+                        <li class="header__submenu-item"><a href="/biblioteca/infantil-primaria.html"
+                                class="header__submenu-link">INFANTIL Y PRIMARIA</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </header>
+    <section class="main__header">
+        <div class="main__title">
+            <h1>Biblioteca de Infantil y Primaria</h1>
+        </div>
+    </section>
     <!-- END HEADER -->
     <!-- START MAIN -->
-    <main>
-        <!-- START HEAD -->
-        <section id="cabecera">
-            <div class="title">
-                <h1>Biblioteca de Infantil y Primaria</h1>
-            </div>
-        </section>
-        <!-- END HEAD -->
+    <main class="main">
+
         <!-- START DESCRIPTION -->
-        <section id="description">
-            <div>
-                <h2>Sobre la Biblioteca</h2>
-                <p>La biblioteca del Colegio Santa María de Yermo ofrece un servicio de prestamo de libros para todos
-                    los alumnos del centro de la etapas de Secundaria y Bachillerato.</p>
-                <p>Será necesario para hacer uso del servicio de préstamo de libros que los alumanos posean el carnét de
-                    lector de la biblioteca.</p>
+        <section class="description">
+            <div class="description__content">
+                <h2 class="description__title">Description</h2>
+                <p class="description__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+                    consectetur repellendus numquam est, laboriosam aspernatur itaque impedit sint? Dolores illum atque
+                    impedit quas reprehenderit harum. Veniam nihil et recusandae quis?</p>
+                <p class="description__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+                    consectetur repellendus numquam est, laboriosam aspernatur itaque impedit sint? Dolores illum atque
+                    impedit quas reprehenderit harum. Veniam nihil et recusandae quis?</p>
             </div>
         </section>
         <!-- END DESCRIPTION -->
-        <!-- START CATALOGO -->
-        <section id="catalogo">
-            <h2>Catalogo de Libros</h2>
-            <!-- Buscador -->
-            <div id="navigator">
-                <form id="search-form">
-                    <input type="text" id="search-input" placeholder="Buscar libro...">
-                </form>
+        <!-- START NAVIGATOR -->
+        <div id="navigator">
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Buscar libro...">
+            </form>
+        </div>
+        <!-- END NAVIGATOR -->
+        <!-- START CATALOG -->
+        <section class="catalog">
+            <h2 class="catalog__title">Catálogo de Libros</h2>
+            <div class="catalog__section">
+                <section class="books books--infantil-primaria"></section>
+                <div id="pagination"></div>
             </div>
-            <!-- Libros -->
-            <section class="books books-infantil-primaria"></section>
         </section>
-        <!-- END CATALOGO -->
-
+        <!-- END CATALOG -->
     </main>
     <!-- END MAIN -->
     <!-- START FOOTER -->
-    <footer>
-        <p class="copy"></p>
+    <footer class="footer">
+        <p class="footer__copy"></p>
     </footer>
     <!-- END FOOTER -->
     <script src="/assets/js/script.js"></script>
