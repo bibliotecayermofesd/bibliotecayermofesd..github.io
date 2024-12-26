@@ -57,7 +57,7 @@ function allBooks(nombreBiblioteca) {
                             <h5 class="books__item-subtitle">${item.subtitulo}</h5>
                             <p class="books__item-author">Autor: ${item.autor}</p>
                             <p class="books__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate consectetur repellendus numquam est, laboriosam aspernatur itaque impedit sint? Dolores illum atque impedit quas reprehenderit harum. Veniam nihil et recusandae quis?</p>
-                            <a href='./libro.html?utm_cod=${item.id}' class="button button--primary">Ver más</a>
+                            <a href='/biblioteca/libro.html?utm_${nombreBiblioteca}=${item.id}' class="button button--primary">Ver más</a>
                         </div>
                     </div>`;
                 });
