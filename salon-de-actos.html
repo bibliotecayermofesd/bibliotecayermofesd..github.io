@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva Salón de Actos – Colegio Sta. María de Yermo - FESD</title>
+  <!-- Carga Tailwind CSS para estilos predefinidos -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <!-- Encabezado principal con título, subtítulo y logotipos -->
+  <header class="bg-green-700 text-white text-center py-5 shadow-md flex items-center justify-between px-10">
+    <!-- Logotipo a la izquierda -->
+    <div>
+      <img src="fesd-logo.png" alt="Logo FESD" class="h-12 inline-block">
+    </div>
+    <!-- Título y subtítulo centrados -->
+    <div>
+      <h1 class="text-3xl font-bold">Reserva Salón de Actos</h1>
+      <h2 class="text-lg">Colegio Sta. María de Yermo - FESD</h2>
+    </div>
+    <!-- Logotipo a la derecha -->
+    <div>
+      <img src="fesd-logo.png" alt="Logo FESD" class="h-12 inline-block">
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="container mx-auto mt-10 px-5">
+    <div class="text-center">
+      <h3 class="text-xl font-semibold">Selecciona un mes, día y espacio para realizar tu reserva</h3>
+    </div>
+
+    <!-- Selección de mes, día y horario -->
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- Selector de meses -->
+      <div id="monthSelector" class="bg-white rounded-lg shadow-md p-4">
+        <h4 class="font-bold text-lg text-center">Meses</h4>
+        <ul class="mt-4 space-y-2">
+          <!-- Botones para seleccionar meses, del 1 al 12 -->
+          <li><button data-month="1"
+              class="month-btn block w-full py-2 px-4 text-center bg-green-200 rounded hover:bg-green-300">Enero</button>
+          </li>
+          <li><button data-month="2"
+              class="month-btn block w-full py-2 px-4 text-center bg-green-200 rounded hover:bg-green-300">Febrero</button>
+          </li>
+          <li><button data-month="3"
+              class="month-btn block w-full py-2 px-4 text-center bg-green-200 rounded hover:bg-green-300">Marzo</button>
+          </li>
+          <li><button data-month="4"
+              class="month-btn block w-full py-2 px-4 text-center bg-green-200 rounded hover:bg-green-300">Abril</button>
+          </li>
+          <li><button data-month="5"
+              class="month-btn block w-full py-2 px-4 text-center bg-green-200 rounded hover:bg-green-300">Mayo</button>
+          </li>
+          <li><button data-month="6"
+              class="month-btn block w-full py-2 px-4 text-center bg-green-200 rounded hover:bg-green-300">Junio</button>
+          </li>
+          <li><button data-month="7"
+              class="month-btn block w-full py-2 px-4 text-center bg-green-200 rounded hover:bg-green-300">Julio</button>
+          </li>
+          <li><button data-month="8"
+              class="month-btn block w-full py-2 px-4 text-center bg-green-200 rounded hover:bg-green-300">Agosto</button>
+          </li>
+          <li><button data-month="9"
+              class="month-btn block w-full py-2 px-4 text-center bg-green-200 rounded hover:bg-green-300">Septiembre</button>
+          </li>
+          <li><button data-month="10"
+              class="month-btn block w-full py-2 px-4 text-center bg-green-200 rounded hover:bg-green-300">Octubre</button>
+          </li>
+          <li><button data-month="11"
+              class="month-btn block w-full py-2 px-4 text-center bg-green-200 rounded hover:bg-green-300">Noviembre</button>
+          </li>
+          <li><button data-month="12"
+              class="month-btn block w-full py-2 px-4 text-center bg-green-200 rounded hover:bg-green-300">Diciembre</button>
+          </li>
+        </ul>
+      </div>
+      <!-- Selector de días, se muestra dinámicamente al seleccionar un mes -->
+      <div id="daySelector" class="bg-white rounded-lg shadow-md p-4 hidden">
+        <h4 class="font-bold text-lg text-center">Días</h4>
+        <div id="dayList" class="mt-4 grid grid-cols-7 gap-2">
+          <!-- Días se cargarán dinámicamente -->
+        </div>
+      </div>
+      <!-- Selector de franjas horarias, se muestra dinámicamente al seleccionar un día -->
+      <div id="timeSelector" class="bg-white rounded-lg shadow-md p-4 hidden">
+        <h4 class="font-bold text-lg text-center">Espacios</h4>
+        <div id="timeSlots" class="mt-4 grid grid-cols-2 gap-2">
+          <!-- Franjas horarias se cargarán dinámicamente -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal para confirmar la reserva -->
+  <div id="modal"
+    class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden flex justify-center items-center">
+    <div class="bg-white p-6 rounded shadow-md text-center">
+      <h3 id="modalTitle" class="text-lg font-bold mb-4">Confirmar Reserva</h3>
+      <p id="modalBody" class="text-gray-600 mb-4"></p>
+      <!-- Formulario para introducir detalles de la reserva -->
+      <form id="reservationForm" class="space-y-4">
+        <div>
+          <label for="professorName" class="block text-left text-gray-700 font-semibold">Nombre del Profesor:</label>
+          <input id="professorName" type="text" class="w-full border rounded px-3 py-2" required>
+        </div>
+        <div>
+          <label for="activity" class="block text-left text-gray-700 font-semibold">Actividad:</label>
+          <input id="activity" type="text" class="w-full border rounded px-3 py-2" required>
+        </div>
+        <div>
+          <label for="studentGroup" class="block text-left text-gray-700 font-semibold">Grupo de Alumnos:</label>
+          <input id="studentGroup" type="text" class="w-full border rounded px-3 py-2" required>
+        </div>
+        <div class="space-x-4">
+          <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Confirmar</button>
+          <button type="button" id="cancelButton"
+            class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script para gestionar la lógica de reservas -->
+
+  <script>
+    // Clave para almacenar las reservas en el localStorage
+    const localStorageKey = "salonReservas";
+
+    // Estado de la aplicación: contiene datos seleccionados por el usuario y las reservas almacenadas
+    const state = {
+      selectedMonth: null, // Mes seleccionado por el usuario
+      selectedDay: null, // Día seleccionado por el usuario
+      selectedTimeSlot: null, // Franja horaria seleccionada por el usuario
+      reservations: JSON.parse(localStorage.getItem(localStorageKey)) || {} // Reservas cargadas desde localStorage, si no hay datos, se inicializa vacío
+    };
+
+    // Referencias a los elementos HTML utilizados en la aplicación
+    const monthSelector = document.getElementById("monthSelector"); // Selector de mes
+    const daySelector = document.getElementById("daySelector"); // Contenedor para seleccionar día
+    const timeSelector = document.getElementById("timeSelector"); // Contenedor para franjas horarias
+    const dayList = document.getElementById("dayList"); // Lista de días
+    const timeSlots = document.getElementById("timeSlots"); // Lista de franjas horarias
+    const modal = document.getElementById("modal"); // Modal para confirmar reserva
+    const modalBody = document.getElementById("modalBody"); // Cuerpo del modal donde se muestra la información
+    const cancelButton = document.getElementById("cancelButton"); // Botón para cerrar el modal
+    const reservationForm = document.getElementById("reservationForm"); // Formulario para confirmar la reserva
+
+    // Horarios disponibles para las reservas
+    const hours = [
+      "08:30 AM", "09:30 AM", "10:30 AM", "11:30 AM", "12:30 PM",
+      "01:30 PM", "02:30 PM", "03:30 PM"
+    ];
+
+    /**
+     * Guarda las reservas actuales en localStorage.
+     */
+    function saveReservations() {
+      localStorage.setItem(localStorageKey, JSON.stringify(state.reservations));
+    }
+
+    /**
+     * Renderiza los días del mes seleccionado.
+     * @param {number} month - El número del mes seleccionado (1-12).
+     */
+    function renderDays(month) {
+      daySelector.classLi
+      
+      
+      st.remove("hidden"); // Muestra el contenedor de selección de días
+      dayList.innerHTML = ""; // Limpia la lista de días
+      const daysInMonth = new Date(2024, month, 0).getDate(); // Calcula el número de días del mes
+
+      // Crea un botón por cada día del mes
+      for (let i = 1; i <= daysInMonth; i++) {
+        const button = document.createElement("button");
+        button.textContent = i; // Muestra el número del día
+        button.dataset.day = i; // Asigna el día como dato
+        button.className = "py-2 px-4 bg-green-200 rounded hover:bg-green-300"; // Estilos base del botón
+        button.addEventListener("click", () => {
+          state.selectedDay = i; // Actualiza el día seleccionado
+          renderTimeSlots(); // Renderiza las franjas horarias para el día seleccionado
+        });
+        dayList.appendChild(button); // Añade el botón a la lista de días
+      }
+    }
+
+    /**
+     * Renderiza las franjas horarias del día seleccionado.
+     */
+    function renderTimeSlots() {
+      timeSelector.classList.remove("hidden"); // Muestra el contenedor de selección de horas
+      timeSlots.innerHTML = ""; // Limpia las franjas horarias
+      const dayKey = `${state.selectedMonth}-${state.selectedDay}`; // Genera la clave única para el día
+      const dayReservations = state.reservations[dayKey] || {}; // Obtiene las reservas existentes para el día, si las hay
+
+      // Itera por cada franja horaria
+      hours.forEach((hour, index) => {
+        const button = document.createElement("button");
+        button.textContent = hour; // Muestra la hora en el botón
+        button.dataset.hour = index; // Asigna el índice como dato
+
+        if (dayReservations[index]) {
+          // Si la franja horaria ya está reservada
+          button.className = "py-2 px-4 bg-red-500 text-white rounded"; // Botón marcado como ocupado
+        } else {
+          // Si la franja horaria está disponible
+          button.className = "py-2 px-4 bg-green-200 rounded hover:bg-green-300"; // Botón marcado como disponible
+          button.addEventListener("click", () => {
+            state.selectedTimeSlot = index; // Actualiza la franja horaria seleccionada
+            showReservationModal(); // Muestra el modal para confirmar la reserva
+          });
+        }
+
+        timeSlots.appendChild(button); // Añade el botón a la lista de franjas horarias
+      });
+    }
+
+    /**
+     * Muestra el modal para confirmar la reserva.
+     */
+    function showReservationModal() {
+      const time = hours[state.selectedTimeSlot]; // Obtiene la hora seleccionada
+      const dayKey = `${state.selectedMonth}-${state.selectedDay}`; // Genera la clave única para el día
+      modalBody.textContent = `Reserva para el día ${state.selectedDay}, mes ${state.selectedMonth} a las ${time}.`; // Detalle de la reserva en el modal
+      modal.classList.remove("hidden"); // Muestra el modal
+    }
+
+    // Maneja el envío del formulario para confirmar la reserva
+    reservationForm.addEventListener("submit", (event) => {
+      event.preventDefault(); // Previene el comportamiento por defecto del formulario
+
+      // Obtiene los datos del formulario
+      const professorName = document.getElementById("professorName").value;
+      const activity = document.getElementById("activity").value;
+      const studentGroup = document.getElementById("studentGroup").value;
+
+      const dayKey = `${state.selectedMonth}-${state.selectedDay}`; // Genera la clave única para el día
+      if (!state.reservations[dayKey]) state.reservations[dayKey] = {}; // Crea un nuevo objeto para el día si no existe
+      state.reservations[dayKey][state.selectedTimeSlot] = { professorName, activity, studentGroup }; // Guarda los detalles de la reserva
+
+      saveReservations(); // Actualiza el localStorage
+      modal.classList.add("hidden"); // Cierra el modal
+      renderTimeSlots(); // Actualiza las franjas horarias para reflejar la reserva
+    });
+
+    // Maneja el cierre del modal
+    cancelButton.addEventListener("click", () => {
+      modal.classList.add("hidden"); // Oculta el modal
+    });
+
+    // Maneja la selección del mes
+    document.querySelectorAll(".month-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.selectedMonth = button.dataset.month; // Actualiza el mes seleccionado
+        renderDays(state.selectedMonth); // Renderiza los días del mes seleccionado
+      });
+    });
+
+  </script>
+</body>
+
+</html>

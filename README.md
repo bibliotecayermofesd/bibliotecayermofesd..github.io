@@ -15,11 +15,7 @@
 - ESO y Bachillerato
 - Aula (Piso/Curso/Letra) Filtro por curso
 
-### División Tematica de la Biblioteca de ESO BACH
 
-- Lengua y Literatura
-- Otros Idiomas
-- Matematicas
 - Clasicas
 - Historia (Biograficos)
 - Diccionarios
