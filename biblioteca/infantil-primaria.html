@@ -47,13 +47,13 @@
         <!-- START DESCRIPTION -->
         <section class="description">
             <div class="description__content">
-                <h2 class="description__title">Description</h2>
-                <p class="description__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-                    consectetur repellendus numquam est, laboriosam aspernatur itaque impedit sint? Dolores illum atque
-                    impedit quas reprehenderit harum. Veniam nihil et recusandae quis?</p>
-                <p class="description__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-                    consectetur repellendus numquam est, laboriosam aspernatur itaque impedit sint? Dolores illum atque
-                    impedit quas reprehenderit harum. Veniam nihil et recusandae quis?</p>
+                <h2 class="description__title">¿Qué encontrarás?</h2>
+                <p class="description__text">Aquí encontrarás el catálogo completo de libros disponibles en la
+                    biblioteca de Infantil y Primaria. Descubre nuestra colección, organizada por géneros, períodos
+                    literarios, idiomas y categorías, diseñada para facilitar tu experiencia de búsqueda y ayudarte a
+                    explorar el fascinante mundo de la lectura. ¡Encuentra tu próximo libro favorito aquí!
+
+                </p>
             </div>
         </section>
         <!-- END DESCRIPTION -->
@@ -63,6 +63,57 @@
                 <input type="text" id="search-input" placeholder="Buscar libro...">
             </form>
         </div>
+        <section class="form">
+            <div class="form-campo">
+                <label for="epoca" class="form__label">Período literario:</label>
+                <select name="epoca" id="epoca" class="form__select">
+                    <option value="" selected>Seleccione</option>
+                    <option value="antigua">Antigua</option>
+                    <option value="edad-media">Edad Media</option>
+                    <option value="renacimiento">Renacimiento</option>
+                    <option value="barroco">Barroco</option>
+                    <option value="neoclasicismo">Neoclasicismo</option>
+                    <option value="romanticismo">Romanticismo</option>
+                    <option value="realismo">Realismo</option>
+                    <option value="naturalismo">Naturalismo</option>
+                    <option value="modernismo">Modernismo</option>
+                    <option value="vanguardismo">Vanguardismo</option>
+                    <option value="posmodernismo">Posmodernismo</option>
+                </select>
+            </div>
+            <div class="form-campo">
+                <label for="genero" class="form__label">Género:</label>
+                <select name="genero" id="genero" class="form__select">
+                    <option value="" selected>Seleccione</option>
+                    <option value="narrativo">Narrativo</option>
+                    <option value="lirico">Lírico</option>
+                    <option value="drama">Dramático</option>
+                    <option value="didactico">Didáctico</option>
+                    <option value="poetico">Poético</option>
+                </select>
+            </div>
+            <div class="form-campo">
+                <label for="idioma" class="form__label">Idioma:</label>
+                <select name="idioma" id="idioma" class="form__select">
+                    <option value="" selected>Seleccione</option>
+                    <option value="castellano">Castellano</option>
+                    <option value="ingles">Inglés</option>
+                    <option value="frances">Francés</option>
+                </select>
+            </div>
+            <div class="form-campo">
+                <label for="tematica" class="form__label">Temática:</label>
+                <select name="tematica" id="tematica" class="form__select">
+                    <option value="" selected>Seleccione</option>
+                    <option value="literatura">Literatura</option>
+                    <option value="matematicas">Matemáticas</option>
+                    <option value="clasicas">Clásicas</option>
+                    <option value="historia">Historia</option>
+                    <option value="diccionarios">Diccionarios</option>
+                    <option value="otros-idiomas">Otros Idiomas</option>
+                </select>
+            </div>
+        </section>
         <!-- END NAVIGATOR -->
         <!-- START CATALOG -->
         <section class="catalog">
@@ -80,8 +131,8 @@
         <p class="footer__copy"></p>
     </footer>
     <!-- END FOOTER -->
-    <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/script.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
 </body>
 
 </html>

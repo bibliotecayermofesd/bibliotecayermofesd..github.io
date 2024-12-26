@@ -10,6 +10,7 @@ function getUtmKey(url = window.location.href) {
 
 // Ejemplo de uso con la URL actual
 const utmKey = getUtmKey(); // Usará la URL actual del navegador
+const booksContainer = document.querySelector('.books');
 
 if (utmKey) {
     fetch(`/assets/db/${utmKey}.json`)
@@ -20,7 +21,6 @@ if (utmKey) {
             return response.json();
         })
         .then(data => {
-            const booksContainer = document.querySelector('.books');
             let booksHTML = ''; // Acumulador de HTML
 
             // Obtener los parámetros de la URL actual
@@ -34,22 +34,23 @@ if (utmKey) {
                 const selectedBook = data.find(item => item.id == bookId);
 
                 if (selectedBook) {
-                    booksHTML = `<div class="book__item">    
-                <div class="book__item-image">
-                    <img src="/assets/img/logo/logo-locus-cognitionis.svg" alt="Logo del libro">
-                </div>
-                <div class="book__item-text">
-                    <h4 class="book__item-title">${selectedBook.titulo}</h4>
-                    <h5 class="book__item-subtitle">${selectedBook.subtitulo}</h5>
-                    <p class="book__item-author">Autor: ${selectedBook.autor}</p>
-                    <p class="book__item-ano_publicacion">Primera Edición: ${selectedBook.ano_publicacion}</p>
-                    <p class="book__item-editorial">Editorial: ${selectedBook.editorial}</p>
-                    <p class="book__item-ano_edicion">Año Edición: ${selectedBook.ano_edicion}</p>
-                    <p class="book__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Voluptate consectetur repellendus numquam est, laboriosam aspernatur itaque impedit sint?
-                        Dolores illum atque impedit quas reprehenderit harum. Veniam nihil et recusandae quis?</p>
-                </div>
-            </div>`;
+                    booksHTML = `
+                        <div class="book__item">    
+                            <div class="book__item-image">
+                                <img src="/assets/img/logo/logo-locus-cognitionis.svg" alt="Logo del libro">
+                            </div>
+                            <div class="book__item-text">
+                                <h4 class="book__item-title">${selectedBook.titulo}</h4>
+                                <h5 class="book__item-subtitle">${selectedBook.subtitulo}</h5>
+                                <p class="book__item-author">Autor: ${selectedBook.autor}</p>
+                                <p class="book__item-ano_publicacion">Primera Edición: ${selectedBook.ano_publicacion}</p>
+                                <p class="book__item-editorial">Editorial: ${selectedBook.editorial}</p>
+                                <p class="book__item-ano_edicion">Año Edición: ${selectedBook.ano_edicion}</p>
+                                <p class="book__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Voluptate consectetur repellendus numquam est, laboriosam aspernatur itaque impedit sint?
+                                    Dolores illum atque impedit quas reprehenderit harum. Veniam nihil et recusandae quis?</p>
+                            </div>
+                        </div>`;
                 } else {
                     // Si no se encuentra ningún libro que coincida
                     booksHTML = `<p class="books__error">No se encontró información del libro solicitado.</p>`;
@@ -64,11 +65,9 @@ if (utmKey) {
         })
         .catch(error => {
             console.error('Error:', error);
-            const booksContainer = document.querySelector('.books');
             booksContainer.innerHTML = `<p class="books__error">Hubo un error al cargar la información. Por favor, intenta nuevamente.</p>`;
         });
 } else {
     console.warn('No se encontró el parámetro UTM en la URL.');
-    const booksContainer = document.querySelector('.books');
     booksContainer.innerHTML = `<p class="books__error">No se encontró un código válido en la URL.</p>`;
 }

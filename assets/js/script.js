@@ -1,12 +1,19 @@
-function toggleMenu() {
+document.addEventListener('DOMContentLoaded', () => {
     const menu = document.querySelector('.header__menu');
-    menu.classList.toggle('header__menu--open');
-}
+    const menuToggle = document.querySelector('.header__menu-toggle');
 
-/**
- * FOOTER
- */
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('header__menu--open');
+        });
+    }
 
-var copyright = new Date();
-var copy = copyright.getFullYear();
-document.querySelector('.footer__copy').innerHTML = `&copy; ${copy} Colegio Santa María de Yermo`;
+    /**
+     * FOOTER
+     */
+    const currentYear = new Date().getFullYear();
+    const footerCopy = document.querySelector('.footer__copy');
+    if (footerCopy) {
+        footerCopy.innerHTML = `&copy; ${currentYear} Colegio Santa María de Yermo`;
+    }
+});
