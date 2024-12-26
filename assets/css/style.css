@@ -45,6 +45,9 @@ body {
     background-color: var(--light);
     color: var(--text-dark);
     overflow-x: hidden;
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
 }
 
 ul {
@@ -212,7 +215,56 @@ ul {
 
 .books__item-description {
     font-size: 0.9rem;
-    color: var(--text-dark);
+}
+
+.book {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 0px;
+}
+
+.book__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    background-color: var(--light);
+}
+
+.book__item-image {
+    flex: 1;
+    /* Ocupa el 40% del ancho de la tarjeta */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book__item-image img {
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    /* Ajusta el tamaño máximo de la imagen si es necesario */
+}
+
+.book__item-text {
+    flex: 3;
+    /* Ocupa el 60% del ancho de la tarjeta */
+    display: flex;
+    flex-direction: column;
+}
+
+.book__item-title,
+.book__item-subtitle,
+.book__item-author,
+.book__item-description {
+    margin-bottom: 0.5rem;
+}
+
+.book__item-description {
+    font-size: 0.9rem;
 }
 
 #pagination {

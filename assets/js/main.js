@@ -139,12 +139,13 @@ function allBooks(nombreBiblioteca) {
                     const searchTerm = e.target.value.toLowerCase();
                     const filteredBooks = data.filter(item =>
                         item.titulo.toLowerCase().includes(searchTerm) ||
-                        (item.subtitulo && item.subtitulo.toLowerCase().includes(searchTerm))
+                        (item.subtitulo && item.subtitulo.toLowerCase().includes(searchTerm)) ||
+                        (item.autor && item.autor.toLowerCase().includes(searchTerm))
                     );
                     if (catalogSection && catalogSection.dataset.number) {
                         displayBooks(getRandomBooks(filteredBooks, parseInt(catalogSection.dataset.number, 10)));
                     } else {
-                        paginateBooks(filteredBooks, 2); // Actualizar paginación con resultados filtrados
+                        paginateBooks(filteredBooks, 6); // Actualizar paginación con resultados filtrados
                     }
                 });
             }
